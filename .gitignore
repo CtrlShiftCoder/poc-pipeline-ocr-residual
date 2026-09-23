@@ -1,0 +1,36 @@
+# Entorno y secretos
+.env
+.venv/
+venv/
+env/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.eggs/
+dist/
+build/
+*.egg
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# IDE / OS
+.idea/
+.vscode/
+*.swp
+.DS_Store
+
+# Datos locales / artefactos OCR
+data/
+tmp/
+*.log
+paddle_models/
+.ocr_cache/
+
+# Streamlit
+.streamlit/secrets.toml
