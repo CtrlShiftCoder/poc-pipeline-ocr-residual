@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es-CL">
+<head>
+  <meta charset="utf-8" />
+  <title>{{ title }}</title>
+  <style>
+    body { font-family: system-ui, sans-serif; color: #1a1a1a; }
+    table { border-collapse: collapse; width: 100%; }
+    th, td { border: 1px solid #ddd; padding: 8px; text-align: left; }
+    th { background: #f4f4f4; }
+    .meta { color: #555; margin-bottom: 1rem; }
+  </style>
+</head>
+<body>
+  <h1>{{ title }}</h1>
+  <p class="meta">Total en este digest: <strong>{{ count }}</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Blob</th>
+        <th>RUT</th>
+        <th>Boleta</th>
+        <th>Monto</th>
+        <th>Tipo</th>
+        <th>Score</th>
+        <th>Master key</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for m in matches %}
+      <tr>
+        <td>{{ m.get('blob_name', '') }}</td>
+        <td>{{ m.get('rut', '') }}</td>
+        <td>{{ m.get('boleta', '') }}</td>
+        <td>{{ m.get('monto', '') }}</td>
+        <td>{{ m.get('match_type', '') }}</td>
+        <td>{{ m.get('score', '') }}</td>
+        <td>{{ m.get('master_key', '') }}</td>
+      </tr>
+      {% else %}
+      <tr><td colspan="7">Sin matches en este lote.</td></tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</body>
+</html>
